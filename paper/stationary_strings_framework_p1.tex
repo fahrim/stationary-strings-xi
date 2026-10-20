@@ -1,0 +1,262 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[turkish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{xurl}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}
+
+\onehalfspacing
+
+\title{\textbf{P1: Stationary-String Çerçevesi --- Galaktik, Hadronik ve Laboratuvar Fenomenolojisi için Birleşik FENE-P Modeli} \\[0.3cm]
+\large (Derece-Defteri, Kırılganlık Haritası ve Kendi Hatalarımızın Adli Denetimi)}
+\author{Fahri Meral}
+\date{20 Ekim 2026}
+
+\begin{document}
+\shorthandoff{=}
+
+\maketitle
+
+\begin{abstract}
+Bu çalışma, Teoremler I--X ve Grand Proof I--III boyunca geliştirilen
+FENE-P akı-sicimi çerçevesini, \emph{iddialarını kendi puanlamasına} sunan
+bir yöntem makalesi olarak sunar. Çerçevenin kilit değişmezleri
+($\Lambda_{\mathrm{Meral}}^{(0)} = 0.07226943267767906$,
+$\mu_s^{\mathrm{Meral}} = 0.20440882367556615$,
+$\mathcal{C}_{\mathrm{univ}} = 1.6260379365521303$,
+$S_{\mathrm{loss}} = 19.75114251524387$,
+$\mathcal{I}_{\mathrm{shield}} = 2\sqrt{2}$) kapalı formlar ve sayısal
+integrallerden türetilir; doğrulama altyapısı 38 otomatik test ve 7 bağımsız
+çapraz denetim betiğinden (toplam 94 bağımsız kontrol, hiçbiri çözücüyü
+import etmez) oluşur. Çekirdek katkımız bir \emph{derece-defteridir}
+(Tablo~1): 17 yayımlanmış karşılaştırmanın her biri için gözlenebilir,
+literatür değeri, model değeri, girişen serbest parametrelerin listesi, bu
+parametrelerin o veriye fit edilip edilmediği ve kırılganlık ölçümü
+verilir. Defter şu sonucu ortaya koyar: 17 karşılaştırmadan yalnızca
+2'si fit, 10'u kilit çekirdekten \emph{transfer}, 2'si gerçek öngörü ve
+2'si yapısaldır; 8 bağımsız gözlem grubu ile 9 serbest derece
+karşılaştırıldığında kanıt oranı $0.889$'dur. Kırılganlık haritası ayrıca
+glueball spektrumunun $\mathcal{C}_{\mathrm{univ}}$'ye $\%27.8$
+duyarlilik gosterdigini (kilit $\%1$'lik kayma) ortaya koyar; yani
+T33'teki $\%1.56$ ortalama sapma \emph{kararli} degildir. Son olarak bir
+adli denetim kaydi sunulur: dogru bulunan ve duzeltilen sekiz hata sinifi
+(ayriklastirmada hatali self-adjoint uzanti, kaynaklar arasinda ters
+etiketlenmis formuller, literaturden gelmeyen ``hayalet parametre''
+bandlari, $H_0$ bagimliliği, totolojik alt sinir, asiri iddialar, vb.).
+Böylece çerçeve, \emph{kanıtlanmış} bir kuram degil, nicel olarak
+denetlenebilir ve \emph{kendini sinirlamis} birlestirilmis bir
+parametrikasyon olarak sunulur.
+\end{abstract}
+
+\section{Kapsam ve iddia sınırları}
+Bu makale üç iddia düzeyini bilinçli olarak ayırır:
+\begin{enumerate}
+    \item \textbf{Cebirsel ve sayısal iddialar (kesin):} kapalı-form
+    değişmezler, FENE-P sicimin öz-eşlenir uzantıları, hücre-merkezli
+    sonlu-hacim ayrıklaştırmasının $p = 2.0000$ mertebesi ve
+    analitik Temple--Kato çerçevelemesi. Bunlar \emph{doğrulama
+    altyapısıyla} birlikte verilir.
+    \item \textbf{Parametrikasyon iddiaları (türetilmiş değil):}
+    $\mathcal{C}_{\mathrm{univ}}$ gibi kilitlerin galaksi, Yang--Mills ve
+    laboratuvar gözlemlerine \emph{taşınması}. Bunlar ansatz seçimlerini
+    içerir; derece-defteri (Tablo~1) hangi satırın hangi seçime bağlı
+    olduğunu açıkça listeler.
+    \item \textbf{Kapsam disi iddialar (ileri):} Yang--Mills kütle
+    aralığının \emph{tamamen} çözülmüş sayılması ya da karanlık madde
+    kuramının ikame edilmiş sayılması. Bu çalışma bu iddiaları kurmaz.
+\end{enumerate}
+
+\section{Çerçevenin kilit değişmezleri}
+Navier--Stokes çekirdeğinden türeyen kapalı-form bütünlük değişmezi
+($\mathrm{GL}$ kahrakter integrali, Euler türetimi) ve ondan türeyen
+boyutsuz kuplaj, doyum oranı ve kalkan değişmezi:
+\begin{equation}
+\label{eq:core}
+\Lambda_{\mathrm{Meral}}^{(0)} = \frac{28}{79}\cdot\frac{1}{2}
+\left[\frac{163}{578} + \frac{64\sqrt{17}}{4913}
+\ln\!\left(\frac{21+5\sqrt{17}}{4}\right)\right] = 0.07226943267767906,
+\end{equation}
+\begin{equation}
+\label{eq:core2}
+\begin{split}
+\mu_s^{\mathrm{Meral}} &= 2\sqrt{2}\,\Lambda_{\mathrm{Meral}}^{(0)}
+= 0.20440882367556615, \\
+\mathcal{C}_{\mathrm{univ}} &= \frac{F_{\mathrm{base}}}{F_{\mathrm{eff}}}
+= 1.6260379365521303, \\
+S_{\mathrm{loss}} &= \frac{e^{2\sqrt{2}}}{1-\eta_{\mathcal{T}_0}}
+= 19.75114251524387.
+\end{split}
+\end{equation}
+\begin{equation}
+\label{eq:core3}
+\mathcal{I}_{\mathrm{shield}} = \ln\!\left[S_{\mathrm{loss}}(1-\eta_{\mathcal{T}_0})\right] = 2\sqrt{2}.
+\end{equation}
+Bu sayılar, çerçevenin ``sıfır yeni kalibrasyon sabeti'' iddiasının
+dayandığı çekirdektir: dışarıdan giren tek parametre yoktur.
+
+\section{Doğrulama altyapısı}
+Çözücü \texttt{solver\_engine.py} içindedir ve 38 otomatik test
+(T1--T37) içerir. Bunlara ek olarak yedi bağımsız betik, hiçbiri çözücüyü
+import etmeden, aynı fiziksel sabitleri yeniden türetir:
+\texttt{mini\_check\_viii} (8/8), \texttt{mini\_check\_ix} (15/15),
+\texttt{mini\_check\_x} (15/15), \texttt{mini\_check\_gp1} (15/15),
+\texttt{mini\_check\_gp2} (17/17), \texttt{mini\_check\_gp3} (15/15) ve
+seri genelini denetleyen \texttt{mini\_check\_audit} (9/9) --- toplam
+94 bağımsız kontrol. Denetim betiği $\mathcal{C}_{\mathrm{univ}}$'yi
+Gauss--Legendre kuvadratürü yerine bir ODE entegrasyonuyla yeniden
+türetir ve $5.6\times10^{-13}$ uyum bulur; $\Pi_{\mathrm{Meral}} = \mu_s$
+özdeşliği $5.6\times10^{-17}$ ile doğrulanır.
+
+\section{Derece-defteri}
+Tablo~\ref{tab:ledger} her yayımlanmış karşılaştırmayı dört soruyla
+listeler. \emph{Kanıt sınıfı} şu anlamlara gelir: \textsc{Fit} (parametre
+doğrudan bu veriye seçilmiştir), \textsc{Fit-benzeri} (bir form çarpanı
+sapma görüldükten sonra eklenmiştir), \textsc{Transfer} (kilit çekirdek
+başka bir alandan gelir), \textsc{Geniine} (serbest parametre
+bulunmayan ayırt edici bir tahmin) ve \textsc{Yapısal} (sayı değil,
+form/kural iddiası). Son sütun, ilgili knob $\%1$ bozulduğunda model
+değerinin göreli değişimidir.
+
+\begin{table}[!htbp]
+\centering\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.05}
+\caption{\textbf{Derece-defteri: 17 karşılaştırmanın kanıt sınıfı ve sapması.}
+Satırlar \texttt{ledger.py} tarafından üretilen JSON ile çapraz
+doğrulanır (tolerans $2\times10^{-3}$).}
+\label{tab:ledger}
+\vspace{0.1cm}
+\begin{tabularx}{\textwidth}{@{}lXrrll@{}}
+\toprule
+Id & Gözlenebilir & Literatür & Model & Sapma & Sınıf \\
+\midrule
+T15a & a1S/h (1.03 T) [kHz] & $1.4204048\times 10^{6}\pm 5.6$ & $1.4204048\times 10^{6}$ & 0.00\% & Fit \\
+T15b & a-b-g (1.03 T) [g] & $0.75\pm 0.16$ & $0.75$ & 0.00\% & Fit \\
+T19 & okuma frekansı (993 mT) [kHz] & $453$ & $453$ & 0.00\% & Transfer \\
+T22 & Ps bant bütçesi oranı $R$ & $3.3387$ & $3.3387$ & 0.00\% & Gerçek \\
+T25 & kayıp bastırma çarpanı & $31.4$ & $31.41$ & 0.03\% & Transfer \\
+T29 & $a_{\mathrm{Meral}}$ [m/s$^2$] & $1.20\times 10^{-10}\pm 2.8\times 10^{-12}$ & $1.1466\times 10^{-10}$ & 4.45\% & Transfer \\
+T29b & BTFR log-log eğimi & $4$ & $4$ & --- & Yapısal \\
+T30 & 5 galaksi ort. sapma [\%] & hedef 0 & $4.5375$ & 4.54\% & Transfer \\
+T31 & $d_{\mathrm{ring}}/\theta_g$ & $10\pm 0.4$ & $10.002$ & 0.02\% & Transfer \\
+T32 & $\Delta m_{\mathrm{gap}}/\sqrt{\sigma}$ & $3.405\pm 0.021$ & $3.3914$ & 0.40\% & Fit-benz. \\
+T33 & 4 glueball ort. sapma [\%] & hedef 0 & $1.5563$ & 1.56\% & Fit-benz. \\
+T34a & Cornell katsayısı & $0.295\pm 0.010$ & $0.2985$ & 1.18\% & Transfer \\
+T34b & $c\bar{c}$ $2S-1S$ [MeV] & $589.19$ & $596.89$ & 1.31\% & Transfer \\
+T34c & $b\bar{b}$ $2S-1S$ [MeV] & $562.96$ & $522.25$ & 7.23\% & Transfer \\
+T36 & $\Delta\nu/\nu$ (2004 olayı) & $2.08\times 10^{-6}$ & $2.0711\times 10^{-6}$ & 0.43\% & Transfer \\
+T35 & direnç zarfının alt kenarı & $12$ & $12.147$ & 1.22\% & Transfer \\
+T37 & $O_{\mathrm{exact}}$ bant oranı & $0.08414$ & $0.084136$ & 0.01\% & Gerçek \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Defterin ortaya koyduğu üç sonuç}
+\paragraph{(i) Kanıt oranı.} 17 satır, aynı knob setini paylaşanlar gruplandığında
+8 \emph{bağımsız} gözlem grubuna indirilir; serbest derece sayısı ise
+7 ansatz + 2 fit parametre = 9'dur. Kanıt oranı $8/9 = 0.889$ çıkar.
+Bu, çerçevenin bir \emph{tahmin} modeli olarak kanıt yükünü taşımadığını
+açıkça söyler: uyum, modelin esnekliğinin doğal sonucudur.
+\paragraph{(ii) Kırılganlık haritası.} En duyarlı satır T33'tür: $\mathcal{C}_{\mathrm{univ}}$
+kilitinin yalnızca $\%1$'lik kayması glueball ortalama sapmasını
+$\%27.8$ kadar oynatır (çünkü $0^{*++}$ çarpanı $\mathcal{C}_{\mathrm{univ}}$ ile
+çarpılır ve aralık ölçeği de $\mathcal{C}_{\mathrm{univ}}$'ye bağlıdır). T33'teki
+$\%1.56$ ortalama sapma \emph{kararlı} değildir. Buna karşılık T34b
+(charmonium) $\%0.05$, T36 (Vela) $\%0.17$ duyarlılık gösterir: bu satırlar
+kilit $\mu_s^{\mathrm{Meral}}$'ye duyarlı ama onun 14 basamağa kadar
+belirlenmiş olması nedeniyle pratikte kırılmazdır.
+\paragraph{(iii) Gerçek öngörü sayısı iki.} 17 karşılaştırmanın yalnızca
+ikisi (T22 ve T37) serbest parametre içermez ve gerçekten ayırt edicidir;
+ikisi de \emph{laboratuvar} tarafındadır. Kalan 15 satır ya fit ya da
+transferdir. Bu, serinin en güçlü ve en zayıf yönlerini aynı tabloda
+göstermektedir.
+
+\section{Adli denetim: bulunan ve düzeltilen hata sınıfları}
+Bu çalışmanın ikinci katkısı, çerçevenin \emph{kendi} hatalarının kaydıdır.
+\begin{enumerate}
+    \item \textbf{Hatalı öz-eşlenir uzantı (T32).} $u=\sqrt{x}\psi$ dönüşümü
+    kritik $-1/(4x^2)$ kuplajında yanlış uzantı seçiyordu; sonuç
+    varyasyonel üst sınırı ($5.6468$) ihlal ediyordu ($5.9158$). Hücre-merkezli
+    sonlu-hacim şemasına geçilince $p = 1.99995$ ve
+    $\lambda_0^{\mathrm{cont}} = 5.6102039939$ elde edildi; bağımsız shooting
+    yöntemi $5.6102039940$ verdi.
+    \item \textbf{Totolojik alt sınır (T32).} Temple--Kato alt sınırı sayısal
+    matrisin kendi özvektöründen türetiliyordu. Yerine \emph{analitik} ve
+    ızgaradan bağımsız çerçeve kondu: $\lambda_0 \in [5.4807, 5.7674]$.
+    \item \textbf{Ters etiketlenmiş kaynak formülleri (T37).}
+    \texttt{arXiv:2605.21289} Denk.(12)'nin \emph{yayımlanan} formu ile
+    ikame varyantı yer değiştirmişti; düzeltildi (159.37 / 9.31).
+    \item \textbf{Literatürden gelmeyen bant (T35).} $r_{\mathrm{ve}}/r_{\mathrm{N}}
+    \in [1.55,1.70]$ ve $\Delta h_{\mathrm{ve}}/\Delta h_{\mathrm{N}}
+    \in [0.30,0.35]$ bantları, git arkeolojisiyle gösterildiği üzere bu çalışmayla
+    sisteme girmiş bir \emph{hayalet parametredir}; ilgili kaynakta
+    \emph{bulunmamaktadır} ve iddia geri çekildi.
+    \item \textbf{$H_0$ bağımlılığı (T29).} $a_{\mathrm{Meral}}$ doğrudan
+    $H_0$ ile orantılıdır; mutlak ölçek değil \emph{oran} testi olarak
+    çerçevelendi.
+    \item \textbf{Sapma sonrası eklenen çarpanlar (T32/T33).} Kiral
+    giydirme $(1+\Lambda_{\mathrm{Meral}}^{(0)}/3)$ ve $0^{-+}$ topolojik
+    terimi, sapma görüldükten sonra eklendi; ikisi de \emph{ek model
+    yorumu} olarak etiketlendi.
+    \item \textbf{Ölçümle çelişen model (T35).} Tek-modlu laminer ansatz
+    kaynağın ölçtüğü direnç artışını açıklamıyordu; iki rejimli bariyer
+    köprüsü kuruldu ve bu kurulumun \emph{ölçümden sonra} yapıldığı açıkça
+    yazıldı.
+    \item \textbf{Sabit kopyalanan ``bağımsız'' denetimler.} Dört mini betiği
+    $\mathcal{C}_{\mathrm{univ}}$'yi sabit kopyalamıştı; bağımsız yeniden
+    türetim (\texttt{mini\_check\_audit}) eklendi.
+\end{enumerate}
+
+\section{Neyi geliştirmek gerekir}
+Çerçevenin \emph{tahmin} değeri, ansatz seçimlerinin türetilmesiyle artar.
+Somut olarak üç iş gerekir: (i) $V_{\mathrm{eff}}$ potansiyelinin
+akı-sicimi dinamiğinden \emph{türetilmesi} (şu anda postüle edilmektedir);
+(ii) direnc/çekirdek-genişleme bağının $S_{\mathrm{loss}}$ üzerinden
+türetilmesi; (iii) fit edilmemiş, yeni alanlarda (örneğin kilonötron
+spektrumu, geçici süperakışkan çekirdekleri) en az üç nicik öngörü.
+Üçüncüsü, alanın \emph{değer} biçiminde ödüllendirdiği türdendir.
+
+\section{Yeniden-üretilebilirlik}
+Kod, Teoremler I--X deposunda \texttt{stationary-strings-v} altında
+(\path{duran_sicimler_sim/}) bulunur. \texttt{python}
+\path{solver_engine.py} tüm testleri çalıştırır; \texttt{python}
+\path{ledger.py} derece-defterini üretir ve \emph{kendi taban
+değerlerini çözücü çıktısıyla $10^{-9}$ toleransta karşılaştırır}.
+\path{mini_check_audit.py} serinin kilit zincirini bağımsız olarak
+yeniden türetir. Tüm paketler CC BY 4.0 ile lisanslıdır.
+
+\begin{thebibliography}{99}
+    \bibitem{meral5} Meral, F. (2026c). \textit{Duran Sicimler Teoremi V}.
+    Açık kaynak çözücü paketi: \texttt{stationary-strings-v}
+    (\url{https://github.com/fahrim/stationary-strings-v}).
+    \bibitem{meral12} Meral, F. (2026). \textit{Grand Proof I--III}.
+    Açık kaynak paketler: \texttt{grand-proof-i}, \texttt{grand-proof-ii},
+    \texttt{grand-proof-iii}.
+    \bibitem{al26} Akbari, R. \textit{et al.} (2026). Four ppm measurement of
+    the antihydrogen ground-state hyperfine splitting. \textit{Nature}
+    \textbf{653}, 1022--1026.
+    \bibitem{base26} Leonhardt, M., Morgner, J. \textit{et al.} (2026). Road
+    transport of trapped antiprotons. \textit{Nature} \textbf{657}, 906--911.
+    \bibitem{mcg16} McGaugh, S.~S., Lelli, F. \& Schombert, J.~M. (2016).
+    Radial acceleration relation in rotationally supported galaxies.
+    \textit{Phys.\ Rev.\ Lett.\ \textbf{117}}, 201101.
+    \bibitem{gs00} Groisman, A. \& Steinberg, V. (2000). Elastic turbulence in
+    a polymer solution flow. \textit{Nature} \textbf{405}, 53--55.
+    \bibitem{link99} Link, B., Epstein, R.~I. \& Lattimer, J.~M. (1999).
+    Pulsar constraints on neutron star structure.
+    \textit{Phys.\ Rev.\ Lett.\ \textbf{83}}, 3362--3365.
+    \bibitem{sy26} Siegert, T. \& Yoneda, H. (2026). On the possibility of an
+    extragalactic positron annihilation signal. arXiv:2605.21289.
+\end{thebibliography}
+
+\end{document}

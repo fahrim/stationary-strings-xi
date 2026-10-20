@@ -1,0 +1,265 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{xurl}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{babel}
+
+\onehalfspacing
+
+\title{\textbf{P1: The Stationary-String Framework --- A Unified FENE-P Model for Galactic, Hadronic and Laboratory Phenomenology} \\[0.3cm]
+\large (A Degrees-of-Freedom Ledger, a Fragility Map, and a Forensic Audit of Its Own Errors)}
+\author{Fahri Meral}
+\date{October 20, 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This paper presents the FENE-P flux-string framework developed across
+Theorems I--X and Grand Proof I--III as a \emph{methods} paper that lets the
+framework score its own claims. Its locked invariants
+($\Lambda_{\mathrm{Meral}}^{(0)} = 0.07226943267767906$,
+$\mu_s^{\mathrm{Meral}} = 0.20440882367556615$,
+$\mathcal{C}_{\mathrm{univ}} = 1.6260379365521303$,
+$S_{\mathrm{loss}} = 19.75114251524387$,
+$\mathcal{I}_{\mathrm{shield}} = 2\sqrt{2}$) follow from closed forms and
+numerical integrals; the verification infrastructure comprises 38 automated
+tests and seven independent cross-check scripts (94 independent checks in
+total, none of which imports the solver). Our central contribution is a
+\emph{degrees-of-freedom ledger} (Table~\ref{tab:ledger}): for each of 17
+published comparisons it states the observable, the literature value, the
+model value, the free parameters entering, whether those parameters were
+fitted to that datum, and a fragility measure. The ledger shows that of the
+17 comparisons only 2 are fits, 10 are transfers of the locked core, 2 are
+genuine predictions and 2 are structural; grouping correlated rows leaves 8
+independent observable groups against 9 free degrees of freedom, i.e.\ an
+evidence ratio of 0.889. The fragility map further shows that the glueball
+mean is unstable: a 1\% shift of $\mathcal{C}_{\mathrm{univ}}$ moves it by
+27.8\%, so the 1.56\% agreement is \emph{not} robust. A forensic audit
+record is finally given, listing eight error classes found and corrected
+within this work (a wrong self-adjoint extension, transposed source
+formulas, literature bands that turned out to be a \emph{ghost parameter},
+an $H_0$ dependence, a tautological lower bound, and others). The framework
+is therefore presented not as a proven theory but as a quantitatively
+auditable and self-limiting unified parametrisation.
+\end{abstract}
+
+\section{Scope and the limits of the claims}
+This paper deliberately separates three levels of claim:
+\begin{enumerate}
+    \item \textbf{Algebraic and numerical claims (exact):} the closed-form
+    invariants, the self-adjoint extensions of the FENE-P string, the
+    $p = 2.0000$ convergence order of the cell-centred finite-volume
+    discretisation, and the analytic Temple--Kato enclosure. These are
+    delivered together with the verification infrastructure.
+    \item \textbf{Parametrisation claims (not derived):} the transport of
+    locks such as $\mathcal{C}_{\mathrm{univ}}$ to galactic, Yang--Mills
+    and laboratory observables. These involve ansatz choices, and the ledger
+    (Table~\ref{tab:ledger}) states which row depends on which choice.
+    \item \textbf{Out of scope:} the claim that the Yang--Mills mass gap is
+    fully solved, or that dark matter is replaced. This paper makes neither
+    claim.
+\end{enumerate}
+
+\section{The locked invariants}
+The closed-form global-integrity invariant (a $\mathrm{GL}$ character
+integral, Euler-derived) and the dimensionless coupling, saturation ratio
+and shield invariant derived from it are
+\begin{equation}
+\label{eq:core}
+\Lambda_{\mathrm{Meral}}^{(0)} = \frac{28}{79}\cdot\frac{1}{2}
+\left[\frac{163}{578} + \frac{64\sqrt{17}}{4913}
+\ln\!\left(\frac{21+5\sqrt{17}}{4}\right)\right] = 0.07226943267767906,
+\end{equation}
+\begin{equation}
+\label{eq:core2}
+\begin{split}
+\mu_s^{\mathrm{Meral}} &= 2\sqrt{2}\,\Lambda_{\mathrm{Meral}}^{(0)}
+= 0.20440882367556615, \\
+\mathcal{C}_{\mathrm{univ}} &= \frac{F_{\mathrm{base}}}{F_{\mathrm{eff}}}
+= 1.6260379365521303, \\
+S_{\mathrm{loss}} &= \frac{e^{2\sqrt{2}}}{1-\eta_{\mathcal{T}_0}}
+= 19.75114251524387.
+\end{split}
+\end{equation}
+\begin{equation}
+\label{eq:core3}
+\mathcal{I}_{\mathrm{shield}} = \ln\!\left[S_{\mathrm{loss}}(1-\eta_{\mathcal{T}_0})\right] = 2\sqrt{2}.
+\end{equation}
+These numbers carry the framework's ``no new calibration constant'' claim:
+no external parameter enters the core.
+
+\section{Verification infrastructure}
+The solver \texttt{solver\_engine.py} contains 38 automated tests
+(T1--T37). In addition, seven independent scripts re-derive the same
+physical constants without ever importing the solver:
+\texttt{mini\_check\_viii} (8/8), \texttt{mini\_check\_ix} (15/15),
+\texttt{mini\_check\_x} (15/15), \texttt{mini\_check\_gp1} (15/15),
+\texttt{mini\_check\_gp2} (17/17), \texttt{mini\_check\_gp3} (15/15) and the
+series-wide \texttt{mini\_check\_audit} (9/9) --- 94 independent checks in
+total. The audit script re-derives $\mathcal{C}_{\mathrm{univ}}$ with an
+ODE integration instead of the Gauss--Legendre quadrature and finds
+agreement to $5.6\times10^{-13}$; the identity
+$\Pi_{\mathrm{Meral}} = \mu_s^{\mathrm{Meral}}$ is confirmed to
+$5.6\times10^{-17}$.
+
+\section{The degrees-of-freedom ledger}
+Table~\ref{tab:ledger} lists every published comparison against four
+questions. The \emph{evidence class} means: \textsc{Fit} (a parameter was
+chosen to reproduce this datum), \textsc{Fit-like} (a multiplicative factor
+was added after a deviation was seen), \textsc{Transfer} (the locked core is
+carried over from another domain), \textsc{Genuine} (a discriminating
+prediction with no free parameter) and \textsc{Structural} (a rule rather
+than a number).
+
+\begin{table}[!htbp]
+\centering\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.05}
+\caption{\textbf{Degrees-of-freedom ledger: evidence class and deviation for
+17 published comparisons.} Rows are cross-checked against the JSON emitted
+by \texttt{ledger.py} (tolerance $2\times10^{-3}$).}
+\label{tab:ledger}
+\vspace{0.1cm}
+\begin{tabularx}{\textwidth}{@{}lXrrll@{}}
+\toprule
+Id & Observable & Literature & Model & Dev. & Class \\
+\midrule
+T15a & a1S/h (1.03 T) [kHz] & $1.4204048\times 10^{6}\pm 5.6$ & $1.4204048\times 10^{6}$ & 0.00\% & Fit \\
+T15b & a-b-g (1.03 T) [g] & $0.75\pm 0.16$ & $0.75$ & 0.00\% & Fit \\
+T19 & read-out frequency (993 mT) [kHz] & $453$ & $453$ & 0.00\% & Transfer \\
+T22 & Ps band budget ratio $R$ & $3.3387$ & $3.3387$ & 0.00\% & Genuine \\
+T25 & loss suppression factor & $31.4$ & $31.41$ & 0.03\% & Transfer \\
+T29 & $a_{\mathrm{Meral}}$ [m/s$^2$] & $1.20\times 10^{-10}\pm 2.8\times 10^{-12}$ & $1.1466\times 10^{-10}$ & 4.45\% & Transfer \\
+T29b & BTFR log-log slope & $4$ & $4$ & --- & Structural \\
+T30 & 5-galaxy mean deviation [\%] & target 0 & $4.5375$ & 4.54\% & Transfer \\
+T31 & $d_{\mathrm{ring}}/\theta_g$ & $10\pm 0.4$ & $10.002$ & 0.02\% & Transfer \\
+T32 & $\Delta m_{\mathrm{gap}}/\sqrt{\sigma}$ & $3.405\pm 0.021$ & $3.3914$ & 0.40\% & Fit-like \\
+T33 & 4-glueball mean deviation [\%] & target 0 & $1.5563$ & 1.56\% & Fit-like \\
+T34a & Cornell coefficient & $0.295\pm 0.010$ & $0.2985$ & 1.18\% & Transfer \\
+T34b & $c\bar{c}$ $2S-1S$ [MeV] & $589.19$ & $596.89$ & 1.31\% & Transfer \\
+T34c & $b\bar{b}$ $2S-1S$ [MeV] & $562.96$ & $522.25$ & 7.23\% & Transfer \\
+T36 & $\Delta\nu/\nu$ (2004 event) & $2.08\times 10^{-6}$ & $2.0711\times 10^{-6}$ & 0.43\% & Transfer \\
+T35 & resistance envelope lower edge & $12$ & $12.147$ & 1.22\% & Transfer \\
+T37 & $O_{\mathrm{exact}}$ band ratio & $0.08414$ & $0.084136$ & 0.01\% & Genuine \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Three results the ledger makes explicit}
+\paragraph{(i) The evidence ratio.} Grouping rows that share a knob set
+leaves 8 \emph{independent} observable groups, against 7 ansatz plus 2 fit
+parameters, i.e.\ 9 free degrees of freedom. The evidence ratio is
+therefore $8/9 = 0.889$. The framework cannot carry a predictive burden in
+its present form: the agreement is a natural consequence of the model's
+flexibility, and the ledger says so explicitly.
+\paragraph{(ii) The fragility map.} The most sensitive row is T33: a 1\% shift
+of the locked $\mathcal{C}_{\mathrm{univ}}$ moves the mean glueball
+deviation by 27.8\%, because the $0^{*++}$ factor multiplies
+$\mathcal{C}_{\mathrm{univ}}$ while the gap scale does as well. The 1.56\%
+agreement is therefore \emph{not} robust. By contrast T34b (charmonium,
+0.05\%) and T36 (Vela, 0.17\%) are practically stable, because
+$\mu_s^{\mathrm{Meral}}$ is fixed to 14 digits.
+\paragraph{(iii) Only two genuine predictions.} Of 17 comparisons, only two
+(T22 and T37) contain no free parameter and are genuinely discriminating;
+both live on the laboratory side. The remaining fifteen are fits or
+transfers. The same table therefore exposes the strongest and the weakest
+parts of the series at once.
+
+\section{Forensic audit: error classes found and fixed}
+The second contribution of this work is the record of the framework's own
+errors.
+\begin{enumerate}
+    \item \textbf{Wrong self-adjoint extension (T32).} The
+    $u=\sqrt{x}\psi$ transformation selected an incorrect extension at the
+    critical $-1/(4x^2)$ coupling, violating the variational upper bound
+    ($5.9158 > 5.6468$). Replacing it with a cell-centred finite-volume
+    scheme gives $p = 1.99995$ and
+    $\lambda_0^{\mathrm{cont}} = 5.6102039939$; an independent shooting
+    integration gives $5.6102039940$.
+    \item \textbf{Tautological lower bound (T32).} The Temple--Kato lower
+    bound had been derived from the numerical matrix' own eigenvector. It
+    was replaced by an analytic, grid-independent enclosure,
+    $\lambda_0 \in [5.4807, 5.7674]$.
+    \item \textbf{Transposed source formulas (T37).} The published form of
+    \texttt{arXiv:2605.21289} Eq.~(12) and the substituted variant had
+    been interchanged; corrected to $159.37$ and $9.31$ respectively.
+    \item \textbf{A literature band that was a ghost parameter (T35).}
+    The bands $r_{\mathrm{ve}}/r_{\mathrm{N}} \in [1.55,1.70]$ and
+    $\Delta h_{\mathrm{ve}}/\Delta h_{\mathrm{N}} \in [0.30,0.35]$ entered
+    this work without literature provenance --- git archaeology shows they
+    arrived with the present series --- and do not occur in the cited
+    source; the claim was retracted.
+    \item \textbf{$H_0$ dependence (T29).} $a_{\mathrm{Meral}}$ is directly
+    proportional to $H_0$; the comparison was reframed as a test of the
+    dimensionless ratio.
+    \item \textbf{Post-hoc multiplicative factors (T32/T33).} The chiral
+    dressing $(1+\Lambda_{\mathrm{Meral}}^{(0)}/3)$ and the topological
+    $0^{-+}$ term were added after deviations were observed; both are
+    labelled as extra model interpretations.
+    \item \textbf{A model contradicting its own source (T35).} The
+    single-mode laminar ansatz could not reproduce the measured flow
+    resistance; a two-regime barrier bridge was constructed, and the fact
+    that this construction was made \emph{after} the measurement is stated
+    explicitly.
+    \item \textbf{Hard-coded ``independent'' checks.} Four mini scripts
+    copied $\mathcal{C}_{\mathrm{univ}}$ as a constant; an independent
+    re-derivation (\texttt{mini\_check\_audit}) was added.
+\end{enumerate}
+
+\section{What would upgrade the claims}
+The predictive value of the framework grows only if the ansatz choices are
+derived. Three concrete tasks follow: (i) derive the effective potential
+$V_{\mathrm{eff}}$ from the flux-string dynamics instead of postulating
+it; (ii) derive the resistance/core-broadening link through the locked
+$S_{\mathrm{loss}}$; (iii) produce at least three quantitative predictions
+in domains never used to fit (for example kaon spectra, or transient
+superfluid cores). The third is the kind of output the field rewards.
+
+\section{Reproducibility}
+The code lives with Theorems I--X in the \texttt{stationary-strings-v}
+repository (under \path{duran_sicimler_sim/}). Running \texttt{python}
+\path{solver_engine.py} executes the full test suite; \texttt{python}
+\path{ledger.py} regenerates the degrees-of-freedom ledger, cross-checks it
+against the solver output at $10^{-9}$ tolerance and verifies the table
+in this paper against the regenerated values; \path{mini_check_audit.py}
+re-derives the locked chain independently. All packages are released under
+CC BY 4.0.
+
+\begin{thebibliography}{99}
+    \bibitem{meral5} Meral, F. (2026c). \textit{Stationary Strings
+    Theorem V}. Open-source solver package: \texttt{stationary-strings-v}
+    (\url{https://github.com/fahrim/stationary-strings-v}).
+    \bibitem{meral12} Meral, F. (2026). \textit{Grand Proof I--III}.
+    Open packages: \texttt{grand-proof-i}, \texttt{grand-proof-ii},
+    \texttt{grand-proof-iii}.
+    \bibitem{al26} Akbari, R. \textit{et al.} (2026). Four ppm measurement of
+    the antihydrogen ground-state hyperfine splitting. \textit{Nature}
+    \textbf{653}, 1022--1026.
+    \bibitem{base26} Leonhardt, M., Morgner, J. \textit{et al.} (2026). Road
+    transport of trapped antiprotons. \textit{Nature} \textbf{657}, 906--911.
+    \bibitem{mcg16} McGaugh, S.~S., Lelli, F. \& Schombert, J.~M. (2016).
+    Radial acceleration relation in rotationally supported galaxies.
+    \textit{Phys.\ Rev.\ Lett.\ \textbf{117}}, 201101.
+    \bibitem{gs00} Groisman, A. \& Steinberg, V. (2000). Elastic turbulence in
+    a polymer solution flow. \textit{Nature} \textbf{405}, 53--55.
+    \bibitem{link99} Link, B., Epstein, R.~I. \& Lattimer, J.~M. (1999).
+    Pulsar constraints on neutron star structure.
+    \textit{Phys.\ Rev.\ Lett.\ \textbf{83}}, 3362--3365.
+    \bibitem{sy26} Siegert, T. \& Yoneda, H. (2026). On the possibility of an
+    extragalactic positron annihilation signal. arXiv:2605.21289.
+\end{thebibliography}
+
+\end{document}

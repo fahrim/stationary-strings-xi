@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "The Stationary-String Framework: A Unified FENE-P Model for Galactic, Hadronic and Laboratory Phenomenology"
+message: "If you use this work, please cite it."
+type: unpublished
+authors:
+  - family-names: Meral
+    given-names: Fahri
+date-released: 2026-10-20
+version: v1
+repository-code: "https://github.com/fahrim/grand-proof-p1"
+license: CC-BY-4.0
+keywords:
+  - FENE-P
+  - flux string
+  - degrees of freedom ledger
+  - reproducibility
+  - forensic audit
+  - Navier-Stokes
+  - confinement

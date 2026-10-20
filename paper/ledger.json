@@ -1,0 +1,485 @@
+{
+ "rows": [
+  {
+   "id": "T15a",
+   "domain": "ALPHA",
+   "observable": "a1S/h (1.03 T) [kHz]",
+   "obs": 1420404.8,
+   "obs_err": 5.6,
+   "src": "Nature 653 (2026)",
+   "model": 1420404.8,
+   "dev_pct": 0.0,
+   "cls": "FIT",
+   "knobs": [
+    [
+     "omega_D0",
+     "fit"
+    ],
+    [
+     "kappa_a5",
+     "fit"
+    ],
+    [
+     "f_Ps",
+     "measured"
+    ]
+   ],
+   "note": "omega_D0 bu degeri uretmek icin secildi",
+   "frag_knob": null,
+   "frag_pct": null
+  },
+  {
+   "id": "T15b",
+   "domain": "ALPHA",
+   "observable": "a-bar-g (1.03 T) [g]",
+   "obs": 0.75,
+   "obs_err": 0.16,
+   "src": "Nature 621 (2023)",
+   "model": 0.75,
+   "dev_pct": 0.0,
+   "cls": "FIT",
+   "knobs": [
+    [
+     "kappa_a5",
+     "fit"
+    ],
+    [
+     "omega_D0",
+     "fit"
+    ]
+   ],
+   "note": "SME sapma siniri icinde kalma kontrolu",
+   "frag_knob": null,
+   "frag_pct": null
+  },
+  {
+   "id": "T19",
+   "domain": "BASE-STEP",
+   "observable": "okuma frekansi (993 mT) [kHz]",
+   "obs": 453.0,
+   "obs_err": null,
+   "src": "Nature 657 (2026)",
+   "model": 453.0,
+   "dev_pct": 0.0,
+   "cls": "TRANSFER",
+   "knobs": [
+    [
+     "mu_s",
+     "locked"
+    ],
+    [
+     "kappa_r",
+     "ansatz"
+    ],
+    [
+     "gamma_rel",
+     "ansatz"
+    ]
+   ],
+   "note": "993/880/136 mT hiyerarsisi yapisal",
+   "frag_knob": null,
+   "frag_pct": null
+  },
+  {
+   "id": "T22",
+   "domain": "ALPHA 511 keV",
+   "observable": "Ps bant butcesi orani R",
+   "obs": 3.3387,
+   "obs_err": null,
+   "src": "A&A (Siegert-Yoneda 2026)",
+   "model": 3.3387,
+   "dev_pct": 0.0,
+   "cls": "GENUINE",
+   "knobs": [
+    [
+     "f_Ps",
+     "measured"
+    ],
+    [
+     "sigma_511",
+     "measured"
+    ]
+   ],
+   "note": "1 parametre; 3.115-3.585 bandi disinda tahmin",
+   "frag_knob": null,
+   "frag_pct": null
+  },
+  {
+   "id": "T25",
+   "domain": "Antimadde",
+   "observable": "kayip bastirma carpani",
+   "obs": 31.4,
+   "obs_err": null,
+   "src": "model ansatzi (yeni deney onerisi)",
+   "model": 31.41,
+   "dev_pct": 0.031847133757966765,
+   "cls": "TRANSFER",
+   "knobs": [
+    [
+     "mu_s",
+     "locked"
+    ],
+    [
+     "S_loss",
+     "locked"
+    ],
+    [
+     "eta_T0",
+     "locked"
+    ]
+   ],
+   "note": "deneysel dogrulama bekliyor",
+   "frag_knob": null,
+   "frag_pct": null
+  },
+  {
+   "id": "T29",
+   "domain": "Galaksi (SPARC)",
+   "observable": "a_Meral [m/s^2]",
+   "obs": 1.2e-10,
+   "obs_err": 2.8e-12,
+   "src": "PRL 117 (2016) a0_SPARC",
+   "model": 1.1465889796559045e-10,
+   "dev_pct": 4.450918362007954,
+   "cls": "TRANSFER",
+   "knobs": [
+    [
+     "mu_s",
+     "locked"
+    ],
+    [
+     "eta_T0",
+     "locked"
+    ],
+    [
+     "H0",
+     "measured"
+    ]
+   ],
+   "note": "H0 secimine bagli; mutlak olcek degil oran testi",
+   "frag_knob": "MU_S",
+   "frag_pct": 1.0000000000000067
+  },
+  {
+   "id": "T29b",
+   "domain": "Galaksi (SPARC)",
+   "observable": "BTFR log-log egimi",
+   "obs": 4.0,
+   "obs_err": null,
+   "src": "astrophysics",
+   "model": 4.0,
+   "dev_pct": 0.0,
+   "cls": "STRUCTURAL",
+   "knobs": [
+    [
+     "RAR enterpolasyonu",
+     "ansatz"
+    ]
+   ],
+   "note": "ansatzin derin-sicim limitinden dogar",
+   "frag_knob": "S_LOSS",
+   "frag_pct": 0.0
+  },
+  {
+   "id": "T30",
+   "domain": "Galaksi (SPARC)",
+   "observable": "5 galaksi ort. sapma [%]",
+   "obs": 0.0,
+   "obs_err": null,
+   "src": "AJ 152 (2016)",
+   "model": 4.537497714926516,
+   "dev_pct": 4.537497714926516,
+   "cls": "TRANSFER",
+   "knobs": [
+    [
+     "mu_s",
+     "locked"
+    ],
+    [
+     "eta_T0",
+     "locked"
+    ],
+    [
+     "H0",
+     "measured"
+    ],
+    [
+     "disk modeli",
+     "ansatz"
+    ]
+   ],
+   "note": "UGC 2885 %12.9 dis-deger; acikca raporlanir",
+   "frag_knob": "MU_S",
+   "frag_pct": 1.5773067887396635
+  },
+  {
+   "id": "T31",
+   "domain": "EHT",
+   "observable": "d_ring/theta_g",
+   "obs": 10.0,
+   "obs_err": 0.4,
+   "src": "ApJL 875, 930 (2019, 2022)",
+   "model": 10.002404139558811,
+   "dev_pct": 0.024041395588110248,
+   "cls": "TRANSFER",
+   "knobs": [
+    [
+     "mu_s",
+     "locked"
+    ],
+    [
+     "C_univ",
+     "locked"
+    ]
+   ],
+   "note": "GRMHD kalibrasyonu ile uyumlu",
+   "frag_knob": "C_UNIV",
+   "frag_pct": 1.0000000000000229
+  },
+  {
+   "id": "T32",
+   "domain": "Yang-Mills",
+   "observable": "Delta m_gap/sqrt(sigma)",
+   "obs": 3.405,
+   "obs_err": 0.021,
+   "src": "Lattice QCD (MP99, AT20)",
+   "model": 3.391446310399585,
+   "dev_pct": 0.3980525580151225,
+   "cls": "FIT-benzeri",
+   "knobs": [
+    [
+     "C_univ",
+     "locked"
+    ],
+    [
+     "mu_s",
+     "locked"
+    ],
+    [
+     "eta_T0",
+     "locked"
+    ],
+    [
+     "V_eff formu",
+     "ansatz"
+    ]
+   ],
+   "note": "kiral giydirme carpani sonradan eklendi",
+   "frag_knob": "C_UNIV",
+   "frag_pct": 1.0000000000000122
+  },
+  {
+   "id": "T33",
+   "domain": "Yang-Mills",
+   "observable": "4 glueball ort. sapma [%]",
+   "obs": 0.0,
+   "obs_err": null,
+   "src": "Lattice QCD (MP99, Chen06, AT20)",
+   "model": 1.5562717600528397,
+   "dev_pct": 1.5562717600528397,
+   "cls": "FIT-benzeri",
+   "knobs": [
+    [
+     "C_univ",
+     "locked"
+    ],
+    [
+     "mu_s",
+     "locked"
+    ],
+    [
+     "eta_T0",
+     "locked"
+    ],
+    [
+     "3 carpan formu",
+     "ansatz"
+    ]
+   ],
+   "note": "0-+ topolojik terimi sonradan eklendi",
+   "frag_knob": "C_UNIV",
+   "frag_pct": 27.80530679059862
+  },
+  {
+   "id": "T34a",
+   "domain": "Yang-Mills",
+   "observable": "Cornell katsayisi",
+   "obs": 0.295,
+   "obs_err": 0.01,
+   "src": "Phys. Rep. 343 (2001)",
+   "model": 0.29847153360434125,
+   "dev_pct": 1.1767910523190748,
+   "cls": "TRANSFER",
+   "knobs": [
+    [
+     "mu_s",
+     "locked"
+    ],
+    [
+     "eta_T0",
+     "locked"
+    ]
+   ],
+   "note": "0.35 sigma",
+   "frag_knob": "MU_S",
+   "frag_pct": 0.12286647695455623
+  },
+  {
+   "id": "T34b",
+   "domain": "Yang-Mills",
+   "observable": "c-cbar 2S-1S [MeV]",
+   "obs": 589.19,
+   "obs_err": null,
+   "src": "PDG 2024",
+   "model": 596.887297980312,
+   "dev_pct": 1.3064203364469842,
+   "cls": "TRANSFER",
+   "knobs": [
+    [
+     "mu_s",
+     "locked"
+    ],
+    [
+     "eta_T0",
+     "locked"
+    ],
+    [
+     "SCR formu",
+     "ansatz"
+    ]
+   ],
+   "note": "%1.31 sapma",
+   "frag_knob": "MU_S",
+   "frag_pct": 0.04500388414182818
+  },
+  {
+   "id": "T34c",
+   "domain": "Yang-Mills",
+   "observable": "b-bbar 2S-1S [MeV]",
+   "obs": 562.96,
+   "obs_err": null,
+   "src": "PDG 2024",
+   "model": 522.2478723202853,
+   "dev_pct": 7.23179758414714,
+   "cls": "TRANSFER",
+   "knobs": [
+    [
+     "mu_s",
+     "locked"
+    ],
+    [
+     "eta_T0",
+     "locked"
+    ],
+    [
+     "SCR formu",
+     "ansatz"
+    ]
+   ],
+   "note": "%7.24 sapma; spin/calisma duzeltmeleri disarida",
+   "frag_knob": "MU_S",
+   "frag_pct": 0.20131475021407222
+  },
+  {
+   "id": "T36",
+   "domain": "Vela pulsar",
+   "observable": "Delta nu/nu (2004 olayi)",
+   "obs": 2.08e-06,
+   "obs_err": null,
+   "src": "Ap&SS 308 (2007)",
+   "model": 2.0711246723803717e-06,
+   "dev_pct": 0.4266984432513614,
+   "cls": "TRANSFER",
+   "knobs": [
+    [
+     "mu_s",
+     "locked"
+    ],
+    [
+     "I_crust/I",
+     "measured"
+    ],
+    [
+     "nudot",
+     "measured"
+    ]
+   ],
+   "note": "%0.43 sapma; 2000 olayi %32.9",
+   "frag_knob": "MU_S",
+   "frag_pct": 0.16971714226716644
+  },
+  {
+   "id": "T35",
+   "domain": "Masaustu girdap",
+   "observable": "direnc zarfinin alt kenarı",
+   "obs": 12.0,
+   "obs_err": null,
+   "src": "Nature 405 (2000) sigma/sigma_lam",
+   "model": 12.146790718256195,
+   "dev_pct": 1.2232559854682932,
+   "cls": "TRANSFER",
+   "knobs": [
+    [
+     "S_loss",
+     "locked"
+    ],
+    [
+     "C_univ",
+     "locked"
+    ]
+   ],
+   "note": "zarf [12.1468, 19.7511] olcumun %97.9 unu kapsar",
+   "frag_knob": "S_LOSS",
+   "frag_pct": 0.9999999999999928
+  },
+  {
+   "id": "T37",
+   "domain": "22Na laboratuvar",
+   "observable": "O_exact bant orani",
+   "obs": 0.08414,
+   "obs_err": null,
+   "src": "arXiv:2605.21289 Denk.(12)",
+   "model": 0.08413579096991904,
+   "dev_pct": 0.005002412741823758,
+   "cls": "GENUINE",
+   "knobs": [],
+   "note": "yayimlanan form 159.37 -> 2.4e6 sigma ile curutulur",
+   "frag_knob": null,
+   "frag_pct": null
+  }
+ ],
+ "summary": {
+  "n_rows": 17,
+  "by_class": {
+   "FIT": 2,
+   "TRANSFER": 10,
+   "GENUINE": 2,
+   "STRUCTURAL": 1,
+   "FIT-benzeri": 2
+  },
+  "n_ansatz": 7,
+  "n_fit": 2,
+  "n_locked": 4,
+  "ansatz": [
+   "3 carpan formu",
+   "RAR enterpolasyonu",
+   "SCR formu",
+   "V_eff formu",
+   "disk modeli",
+   "gamma_rel",
+   "kappa_r"
+  ],
+  "fit": [
+   "kappa_a5",
+   "omega_D0"
+  ],
+  "locked": [
+   "C_univ",
+   "S_loss",
+   "eta_T0",
+   "mu_s"
+  ],
+  "n_groups": 8,
+  "evidence_ratio": 0.889
+ }
+}

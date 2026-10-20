@@ -1,0 +1,20 @@
+{
+  "title": "The Stationary-String Framework: A Unified FENE-P Model for Galactic, Hadronic and Laboratory Phenomenology",
+  "description": "Methods paper (October 2026) for the Stationary-String framework developed across Theorems I-X and Grand Proof I-III: closed-form locked invariants (Lambda_Meral = 0.07226943267767906, mu_s = 0.20440882367556615, C_univ = 1.6260379365521303, S_loss = 19.75114251524387, I_shield = 2 sqrt 2), a verification infrastructure of 38 automated tests and 7 independent cross-check scripts (94 checks), a machine-readable degrees-of-freedom ledger for 17 published comparisons (2 fit, 2 fit-like, 10 transfer, 2 genuine, 1 structural; evidence ratio 0.889), a fragility map showing the glueball agreement is not robust (27.8 percent per 1 percent shift of C_univ), and a forensic audit record of eight error classes found and corrected within the work. The paper is explicitly a methods and self-assessment contribution, not a claim of solving the Yang-Mills mass gap. Full paper in Turkish and English; the ledger table in the paper is verified programmatically by duran_sicimler_sim/ledger.py.",
+  "creators": [
+    {
+      "name": "Meral, Fahri"
+    }
+  ],
+  "license": {
+    "id": "CC-BY-4.0"
+  },
+  "keywords": [
+    "FENE-P",
+    "flux string",
+    "degrees of freedom ledger",
+    "reproducibility",
+    "forensic audit",
+    "Navier-Stokes"
+  ]
+}
