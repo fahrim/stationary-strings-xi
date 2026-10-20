@@ -8,7 +8,7 @@
 
 Yazar: Fahri Meral · Tarih: 20 Ekim 2026 · Sürüm: v1 (SS-XI)
 
-> **Durum:** Yayımlanmamış ön-baskı (v1). Hakem denetiminden geçmemiştir. *Zenodo DOI'si yüklemeyi bekliyor.*
+> **Durum:** Yayımlanmamış ön-baskı (v1). Hakem denetiminden geçmemiştir. *[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.23517470-blue.svg)](https://doi.org/10.5281/zenodo.23517470)*
 
 ## Bu makale ne (ve ne değil)
 Bu bir **yöntem makalesidir**: çerçevenin kendi iddialarını kendi
@@ -70,6 +70,7 @@ uyuşmayan satırları listeler.
   title  = {Stationary-String Çerçevesi: Galaktik, Hadronik ve Laboratuvar Fenomenolojisi için Birleşik FENE-P Modeli},
   year   = {2026},
   url    = {https://github.com/fahrim/stationary-strings-xi}
+  doi    = {10.5281/zenodo.23517470},
 }
 ```
 

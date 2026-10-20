@@ -5,6 +5,7 @@ type: unpublished
 authors:
   - family-names: Meral
     given-names: Fahri
+doi: 10.5281/zenodo.23517470
 date-released: 2026-10-20
 version: v1
 repository-code: "https://github.com/fahrim/stationary-strings-xi"

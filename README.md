@@ -8,7 +8,7 @@
 
 Author: Fahri Meral · Date: October 20, 2026 · Version: v1 (SS-XI)
 
-> **Status:** Unpublished preprint (v1). Not peer-reviewed. *Zenodo DOI pending deposit.*
+> **Status:** Unpublished preprint (v1). Not peer-reviewed. *[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.23517470-blue.svg)](https://doi.org/10.5281/zenodo.23517470)*
 
 ## What this paper is (and is not)
 
@@ -72,6 +72,7 @@ drifts from the recomputed values.
   title  = {The Stationary-String Framework: A Unified FENE-P Model for Galactic, Hadronic and Laboratory Phenomenology},
   year   = {2026},
   url    = {https://github.com/fahrim/stationary-strings-xi}
+  doi    = {10.5281/zenodo.23517470},
 }
 ```
 
