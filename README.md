@@ -1,12 +1,12 @@
-# Stationary-String Framework (P1) — Publication Package
+# Stationary-String Framework (SS-XI) — Publication Package
 
 > **Türkçe:** [README_TR.md](./README_TR.md)
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](LICENSE)
 
-**P1: The Stationary-String Framework — A Unified FENE-P Model for Galactic, Hadronic and Laboratory Phenomenology (A Degrees-of-Freedom Ledger, a Fragility Map, and a Forensic Audit of Its Own Errors)**
+**SS-XI: The Stationary-String Framework — A Unified FENE-P Model for Galactic, Hadronic and Laboratory Phenomenology (A Degrees-of-Freedom Ledger, a Fragility Map, and a Forensic Audit of Its Own Errors)**
 
-Author: Fahri Meral · Date: October 20, 2026 · Version: v1 (P1)
+Author: Fahri Meral · Date: October 20, 2026 · Version: v1 (SS-XI)
 
 > **Status:** Unpublished preprint (v1). Not peer-reviewed. *Zenodo DOI pending deposit.*
 
@@ -21,8 +21,8 @@ in Section 1 of the paper.
 
 | File | Description |
 |---|---|
-| `paper/stationary_strings_framework_p1.tex` | Main paper, Turkish (Table 1, 7 sections) |
-| `paper/stationary_strings_framework_p1_EN.tex` | English version |
+| `paper/stationary_strings_XI_framework.tex` | Main paper, Turkish (Table 1, 7 sections) |
+| `paper/stationary_strings_XI_framework_EN.tex` | English version |
 | `paper/ledger.json` | Machine-readable degrees-of-freedom ledger (17 rows) |
 | `CITATION.cff` | Citation record |
 | `LICENSE` | CC BY 4.0 |
@@ -71,7 +71,7 @@ drifts from the recomputed values.
   author = {Fahri Meral},
   title  = {The Stationary-String Framework: A Unified FENE-P Model for Galactic, Hadronic and Laboratory Phenomenology},
   year   = {2026},
-  url    = {https://github.com/fahrim/grand-proof-p1}
+  url    = {https://github.com/fahrim/stationary-strings-xi}
 }
 ```
 
@@ -80,7 +80,7 @@ See also `CITATION.cff`.
 ## Related work
 
 - `stationary-strings-i` … `stationary-strings-x` — Theorems I–X (the parent series).
-- `grand-proof-i` / `grand-proof-ii` / `grand-proof-iii` — the three application
+- `stationary-strings-xii` / `stationary-strings-xiii` / `stationary-strings-xiv` — the three application
   papers, each of which is audited by the ledger of the present work.
 
 ## License

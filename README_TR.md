@@ -1,12 +1,12 @@
-# Stationary-String Çerçevesi (P1) — Yayın Paketi
+# Stationary-String Çerçevesi (SS-XI) — Yayın Paketi
 
 > **English:** [README.md](./README.md)
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](LICENSE)
 
-**P1: Stationary-String Çerçevesi — Galaktik, Hadronik ve Laboratuvar Fenomenolojisi için Birleşik FENE-P Modeli (Derece-Defteri, Kırılganlık Haritası ve Kendi Hatalarımızın Adli Denetimi)**
+**SS-XI: Stationary-String Çerçevesi — Galaktik, Hadronik ve Laboratuvar Fenomenolojisi için Birleşik FENE-P Modeli (Derece-Defteri, Kırılganlık Haritası ve Kendi Hatalarımızın Adli Denetimi)**
 
-Yazar: Fahri Meral · Tarih: 20 Ekim 2026 · Sürüm: v1 (P1)
+Yazar: Fahri Meral · Tarih: 20 Ekim 2026 · Sürüm: v1 (SS-XI)
 
 > **Durum:** Yayımlanmamış ön-baskı (v1). Hakem denetiminden geçmemiştir. *Zenodo DOI'si yüklemeyi bekliyor.*
 
@@ -20,8 +20,8 @@ makalenin 1. bölümünde açıkça belirtilmiştir.
 
 | Dosya | Açıklama |
 |---|---|
-| `paper/stationary_strings_framework_p1.tex` | Ana makale, Türkçe (Tablo 1, 7 bölüm) |
-| `paper/stationary_strings_framework_p1_EN.tex` | İngilizce sürüm |
+| `paper/stationary_strings_XI_framework.tex` | Ana makale, Türkçe (Tablo 1, 7 bölüm) |
+| `paper/stationary_strings_XI_framework_EN.tex` | İngilizce sürüm |
 | `paper/ledger.json` | Makine-okunur derece-defteri (17 satır) |
 | `CITATION.cff` | Atıf kaydı |
 | `LICENSE` | CC BY 4.0 |
@@ -69,7 +69,7 @@ uyuşmayan satırları listeler.
   author = {Fahri Meral},
   title  = {Stationary-String Çerçevesi: Galaktik, Hadronik ve Laboratuvar Fenomenolojisi için Birleşik FENE-P Modeli},
   year   = {2026},
-  url    = {https://github.com/fahrim/grand-proof-p1}
+  url    = {https://github.com/fahrim/stationary-strings-xi}
 }
 ```
 
@@ -78,7 +78,7 @@ Ayrıca bkz. `CITATION.cff`.
 ## İlgili çalışmalar
 
 - `stationary-strings-i` … `stationary-strings-x` — Teoremler I–X (ana seri).
-- `grand-proof-i` / `grand-proof-ii` / `grand-proof-iii` — üç uygulama makalesi;
+- `stationary-strings-xii` / `stationary-strings-xiii` / `stationary-strings-xiv` — üç uygulama makalesi;
   her biri bu çalışmanın derece-defteri tarafından denetlenir.
 
 ## Lisans
