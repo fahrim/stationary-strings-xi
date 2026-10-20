@@ -71,7 +71,7 @@ drifts from the recomputed values.
   author = {Fahri Meral},
   title  = {The Stationary-String Framework: A Unified FENE-P Model for Galactic, Hadronic and Laboratory Phenomenology},
   year   = {2026},
-  url    = {https://github.com/fahrim/stationary-strings-xi}
+  url    = {https://github.com/fahrim/stationary-strings-xi},
   doi    = {10.5281/zenodo.23517470},
 }
 ```

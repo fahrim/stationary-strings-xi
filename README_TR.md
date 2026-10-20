@@ -69,7 +69,7 @@ uyuşmayan satırları listeler.
   author = {Fahri Meral},
   title  = {Stationary-String Çerçevesi: Galaktik, Hadronik ve Laboratuvar Fenomenolojisi için Birleşik FENE-P Modeli},
   year   = {2026},
-  url    = {https://github.com/fahrim/stationary-strings-xi}
+  url    = {https://github.com/fahrim/stationary-strings-xi},
   doi    = {10.5281/zenodo.23517470},
 }
 ```
